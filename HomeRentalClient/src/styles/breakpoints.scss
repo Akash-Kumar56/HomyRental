@@ -1,0 +1,62 @@
+// Importing Sass map module
+@use "sass:map";
+
+// Define breakpoints in a map for easier management
+$breakpoints: (
+  "sm": 480px,
+  "mm": 580px,
+  "md": 720px,
+  "ml": 820px,
+  "lg": 1000px,
+  "xl": 1120px
+);
+
+// Mixin to generate media queries for each breakpoint
+@mixin breakpoint($name) {
+  $breakpoint: map.get($breakpoints, $name);
+
+  @if $breakpoint != null {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$name} not found in $breakpoints map.";
+  }
+}
+
+// Example Mixins for commonly used breakpoints
+@mixin sm {
+  @include breakpoint("sm") {
+    @content;
+  }
+}
+
+@mixin mm {
+  @include breakpoint("mm") {
+    @content;
+  }
+}
+
+@mixin md {
+  @include breakpoint("md") {
+    @content;
+  }
+}
+
+@mixin ml {
+  @include breakpoint("ml") {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include breakpoint("lg") {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include breakpoint("xl") {
+    @content;
+  }
+}
