@@ -1,4 +1,4 @@
-@import "../styles/variables.scss";
+@use "./variables" as variables;
 
 .listing-card {
   position: relative;
@@ -7,7 +7,7 @@
   border-radius: 10px;
 
   &:hover {
-    @include shadow;
+    @include variables.shadow;
   }
 
   .slider-container {

@@ -1,4 +1,4 @@
-// Importing Sass map module
+// Import Sass map module
 @use "sass:map";
 
 // Define breakpoints in a map for easier management
@@ -60,3 +60,6 @@ $breakpoints: (
     @content;
   }
 }
+
+// Export breakpoints and mixins for other files
+@forward "breakpoints";

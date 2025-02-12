@@ -1,5 +1,5 @@
-@use "./variables.scss" as variables;
-@use "./breakpoints.scss" as breakpoints;
+@use "./variables" as variables;
+@use "./breakpoints" as breakpoints;
 
 .login {
   width: 100vw;

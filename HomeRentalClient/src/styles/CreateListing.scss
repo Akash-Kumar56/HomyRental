@@ -1,16 +1,16 @@
-@import "../styles/variables.scss";
-@import "../styles/breakpoints.scss";
+@use "../styles/variables" as variables;
+@use "../styles/breakpoints" as breakpoints;
 
 .create-listing {
-  background-color: $lightgrey;
+  background-color: variables.$lightgrey;
   padding: 40px 60px 120px;
 
-  @include mm {
+  @include breakpoints.mm {
     padding: 40px 20px;
   }
 
   h1 {
-    color: $blue;
+    color: variables.$blue;
   }
 
   &_step1 {
@@ -19,12 +19,12 @@
     border-radius: 20px;
     margin-top: 40px;
 
-    @include sm {
+    @include breakpoints.sm {
       padding: 30px 20px;
     }
 
     h2 {
-      color: $pinkred;
+      color: variables.$pinkred;
     }
 
     hr {
@@ -33,7 +33,7 @@
 
     h3 {
       margin: 40px 0 20px;
-      color: $blue;
+      color: variables.$blue;
     }
 
     .category-list {
@@ -44,11 +44,11 @@
       gap: 20px;
       padding: 0 20px;
 
-      @include lg {
+      @include breakpoints.lg {
         padding: 0 20px;
       }
 
-      @include md {
+      @include breakpoints.md {
         padding: 0;
       }
 
@@ -59,7 +59,7 @@
         align-items: center;
         width: 110px;
         height: 90px;
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -76,14 +76,14 @@
         }
 
         &:hover {
-          border: 2px solid $pinkred;
-          background-color: $lightgrey;
+          border: 2px solid variables.$pinkred;
+          background-color: variables.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid $pinkred;
-        background-color: $lightgrey;
+        border: 2px solid variables.$pinkred;
+        background-color: variables.$lightgrey;
       }
     }
 
@@ -98,7 +98,7 @@
         align-items: center;
         max-width: 600px;
         padding: 15px 30px;
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.3s ease;
@@ -116,14 +116,14 @@
         }
 
         &:hover {
-          border: 2px solid $pinkred;
-          background-color: $lightgrey;
+          border: 2px solid variables.$pinkred;
+          background-color: variables.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid $pinkred;
-        background-color: $lightgrey;
+        border: 2px solid variables.$pinkred;
+        background-color: variables.$lightgrey;
       }
     }
 
@@ -137,7 +137,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
 
-      @include ml {
+      @include breakpoints.ml {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -150,7 +150,7 @@
         margin: 20px 0 10px;
       }
       input {
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
@@ -173,7 +173,7 @@
         align-items: center;
         gap: 30px;
         padding: 15px;
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         border-radius: 10px;
 
         p {
@@ -196,12 +196,12 @@
     border-radius: 20px;
     margin-top: 40px;
 
-    @include sm {
+    @include breakpoints.sm {
       padding: 30px 20px;
     }
 
     h2 {
-      color: $pinkred;
+      color: variables.$pinkred;
     }
 
     hr {
@@ -210,7 +210,7 @@
 
     h3 {
       margin: 40px 0 20px;
-      color: $blue;
+      color: variables.$blue;
     }
 
     .amenities {
@@ -225,7 +225,7 @@
         align-items: center;
         width: 200px;
         height: 90px;
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -239,14 +239,14 @@
         }
 
         &:hover {
-          border: 2px solid $pinkred;
-          background-color: $lightgrey;
+          border: 2px solid variables.$pinkred;
+          background-color: variables.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid $pinkred;
-        background-color: $lightgrey;
+        border: 2px solid variables.$pinkred;
+        background-color: variables.$lightgrey;
       }
     }
 
@@ -277,7 +277,7 @@
           cursor: pointer;
 
           &:hover {
-            color: $pinkred;
+            color: variables.$pinkred;
           }
         }
       }
@@ -288,7 +288,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        border: 1px dashed $grey;
+        border: 1px dashed variables.$grey;
 
         .icon {
           font-size: 60px;
@@ -309,11 +309,11 @@
         padding: 40px 100px;
         border-radius: 10px;
 
-        @include mm {
+        @include breakpoints.mm {
           padding: 40px 80px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
           padding: 40px 30px;
         }
       }
@@ -321,7 +321,7 @@
 
     .title {
       input {
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
@@ -342,22 +342,22 @@
 
       input,
       textarea {
-        border: 1px solid $grey;
+        border: 1px solid variables.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
         font-weight: 600;
         width: 600px;
 
-        @include ml {
+        @include breakpoints.ml {
           width: 450px;
         }
 
-        @include md {
+        @include breakpoints.md {
           width: 350px;
         }
 
-        @include sm {
+        @include breakpoints.sm {
           width: 280px;
         }
 
@@ -381,7 +381,7 @@
   .submit_btn {
     margin-top: 40px;
 
-    @include buttonStyle;
+    @include variables.buttonStyle;
 
     &:hover {
       box-shadow: 0 0 10px 3px rgb(117, 117, 117);
@@ -390,9 +390,9 @@
 }
 
 .basic_count {
-  color: $dark;
+  color: variables.$dark;
   &:hover {
-    color: $pinkred;
+    color: variables.$pinkred;
   }
  
 }

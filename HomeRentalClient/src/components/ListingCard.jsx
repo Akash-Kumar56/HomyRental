@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Listingcard.scss'
+import '../styles/ListingCard.scss'
 import { ArrowForwardIos, ArrowBackIos, Favorite } from '@mui/icons-material'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";

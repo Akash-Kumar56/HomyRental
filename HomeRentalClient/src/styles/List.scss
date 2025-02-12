@@ -1,12 +1,11 @@
-@import "../styles/variables.scss";
-@import "../styles/breakpoints.scss";
-
+@use "../styles/variables";
+@use "../styles/breakpoints";
 
 .title-list {
   margin: 40px 100px;
-  color: $blue;
+  color: variables.$blue;
 
-  @include sm {
+  @include breakpoints.sm {
     margin: 40px 50px;
   }
 }
@@ -18,7 +17,7 @@
   flex-wrap: wrap;
   gap: 25px;
 
-  @include xl {
+  @include breakpoints.xl {
     padding: 0 20px 120px;
   }
 }

@@ -1,5 +1,6 @@
-@import "./variables.scss";
-@import "./breakpoints.scss";
+// Import variables and breakpoints using @use
+@use "./variables" as variables;
+@use "./breakpoints" as breakpoints;
 
 .footer {
   display: flex;
@@ -88,6 +89,19 @@
         font-size: 14px;
         opacity: 0.8;
       }
+    }
+  }
+
+  // Responsive Design
+  @include breakpoints.md {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    &_left,
+    &_center,
+    &_right {
+      max-width: 100%;
     }
   }
 }
