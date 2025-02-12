@@ -1,5 +1,4 @@
-@use "./variables" as variables;
-@use "./breakpoints" as breakpoints;
+@use "./index" as styles;
 
 .category-list {
   padding: 50px 80px;
@@ -8,7 +7,7 @@
   flex-wrap: wrap;
   gap: 60px;
 
-  @include breakpoints.sm {
+  @include styles.breakpoint(sm) {
     padding: 50px 20px;
   }
 
@@ -16,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: variables.$darkgrey;
+    color: styles.$darkgrey;
     cursor: pointer;
 
     &_icon {
@@ -29,12 +28,12 @@
     }
 
     &:hover {
-      color: variables.$pinkred;
+      color: styles.$pinkred;
     }
   }
 
   .selected {
-    color: variables.$pinkred;
+    color: styles.$pinkred;
   }
 }
 
@@ -45,7 +44,7 @@
   justify-content: center;
   gap: 5px;
 
-  @include breakpoints.lg {
+  @include styles.breakpoint(lg) {
     padding: 0 20px 120px;
   }
 }

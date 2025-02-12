@@ -1,5 +1,4 @@
-@use "./variables" as variables;
-@use "./breakpoints" as breakpoints;
+@use "./index" as styles;
 
 .register {
   width: 100vw;
@@ -20,11 +19,11 @@
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 
-    @include breakpoints.lg {
+    @include styles.breakpoint(lg) {
       width: 60%;
     }
 
-    @include breakpoints.mm {
+    @include styles.breakpoint(mm) {
       width: 80%;
     }
 
@@ -77,7 +76,7 @@
       button {
         margin-top: 15px;
 
-        @include variables.buttonStyle;
+        @include styles.buttonStyle;
         width: 50%;
 
         &:hover {

@@ -1,6 +1,5 @@
 // Import variables and breakpoints
-@use "./variables" as variables;
-@use "./breakpoints" as breakpoints;
+@use "./index" as styles;
 
 .categories {
   padding: 50px 60px;
@@ -8,14 +7,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: variables.$lightgrey;
+  background-color: styles.$lightgrey;
 
-  @include breakpoints.sm {
+  @include styles.breakpoint(sm) {
     padding: 50px 20px;
   }
 
   h1 {
-    color: variables.$blue;
+    color: styles.$blue;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 15px;

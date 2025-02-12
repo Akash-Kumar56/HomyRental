@@ -1,16 +1,15 @@
-@use "../styles/variables" as variables;
-@use "../styles/breakpoints" as breakpoints;
+@use "./index" as styles;
 
 .create-listing {
-  background-color: variables.$lightgrey;
+  background-color: styles.$lightgrey;
   padding: 40px 60px 120px;
 
-  @include breakpoints.mm {
+  @include styles.breakpoint(mm) {
     padding: 40px 20px;
   }
 
   h1 {
-    color: variables.$blue;
+    color: styles.$blue;
   }
 
   &_step1 {
@@ -19,12 +18,12 @@
     border-radius: 20px;
     margin-top: 40px;
 
-    @include breakpoints.sm {
+    @include styles.breakpoint(sm) {
       padding: 30px 20px;
     }
 
     h2 {
-      color: variables.$pinkred;
+      color: styles.$pinkred;
     }
 
     hr {
@@ -33,7 +32,7 @@
 
     h3 {
       margin: 40px 0 20px;
-      color: variables.$blue;
+      color: styles.$blue;
     }
 
     .category-list {
@@ -44,11 +43,11 @@
       gap: 20px;
       padding: 0 20px;
 
-      @include breakpoints.lg {
+      @include styles.breakpoint(lg) {
         padding: 0 20px;
       }
 
-      @include breakpoints.md {
+      @include styles.breakpoint(md) {
         padding: 0;
       }
 
@@ -59,7 +58,7 @@
         align-items: center;
         width: 110px;
         height: 90px;
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -76,14 +75,14 @@
         }
 
         &:hover {
-          border: 2px solid variables.$pinkred;
-          background-color: variables.$lightgrey;
+          border: 2px solid styles.$pinkred;
+          background-color: styles.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid variables.$pinkred;
-        background-color: variables.$lightgrey;
+        border: 2px solid styles.$pinkred;
+        background-color: styles.$lightgrey;
       }
     }
 
@@ -98,7 +97,7 @@
         align-items: center;
         max-width: 600px;
         padding: 15px 30px;
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.3s ease;
@@ -116,14 +115,14 @@
         }
 
         &:hover {
-          border: 2px solid variables.$pinkred;
-          background-color: variables.$lightgrey;
+          border: 2px solid styles.$pinkred;
+          background-color: styles.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid variables.$pinkred;
-        background-color: variables.$lightgrey;
+        border: 2px solid styles.$pinkred;
+        background-color: styles.$lightgrey;
       }
     }
 
@@ -137,7 +136,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
 
-      @include breakpoints.ml {
+      @include styles.breakpoint(ml) {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -150,7 +149,7 @@
         margin: 20px 0 10px;
       }
       input {
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
@@ -173,7 +172,7 @@
         align-items: center;
         gap: 30px;
         padding: 15px;
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         border-radius: 10px;
 
         p {
@@ -196,12 +195,12 @@
     border-radius: 20px;
     margin-top: 40px;
 
-    @include breakpoints.sm {
+    @include styles.breakpoint(sm) {
       padding: 30px 20px;
     }
 
     h2 {
-      color: variables.$pinkred;
+      color: styles.$pinkred;
     }
 
     hr {
@@ -210,7 +209,7 @@
 
     h3 {
       margin: 40px 0 20px;
-      color: variables.$blue;
+      color: styles.$blue;
     }
 
     .amenities {
@@ -225,7 +224,7 @@
         align-items: center;
         width: 200px;
         height: 90px;
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -239,14 +238,14 @@
         }
 
         &:hover {
-          border: 2px solid variables.$pinkred;
-          background-color: variables.$lightgrey;
+          border: 2px solid styles.$pinkred;
+          background-color: styles.$lightgrey;
         }
       }
 
       .selected {
-        border: 2px solid variables.$pinkred;
-        background-color: variables.$lightgrey;
+        border: 2px solid styles.$pinkred;
+        background-color: styles.$lightgrey;
       }
     }
 
@@ -277,7 +276,7 @@
           cursor: pointer;
 
           &:hover {
-            color: variables.$pinkred;
+            color: styles.$pinkred;
           }
         }
       }
@@ -288,7 +287,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        border: 1px dashed variables.$grey;
+        border: 1px dashed styles.$grey;
 
         .icon {
           font-size: 60px;
@@ -309,11 +308,11 @@
         padding: 40px 100px;
         border-radius: 10px;
 
-        @include breakpoints.mm {
+        @include styles.breakpoint(mm) {
           padding: 40px 80px;
         }
 
-        @include breakpoints.sm {
+        @include styles.breakpoint(sm) {
           padding: 40px 30px;
         }
       }
@@ -321,7 +320,7 @@
 
     .title {
       input {
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
@@ -342,22 +341,22 @@
 
       input,
       textarea {
-        border: 1px solid variables.$grey;
+        border: 1px solid styles.$grey;
         padding: 15px 30px;
         border-radius: 10px;
         font-size: 16px;
         font-weight: 600;
         width: 600px;
 
-        @include breakpoints.ml {
+        @include styles.breakpoint(ml) {
           width: 450px;
         }
 
-        @include breakpoints.md {
+        @include styles.breakpoint(md) {
           width: 350px;
         }
 
-        @include breakpoints.sm {
+        @include styles.breakpoint(sm) {
           width: 280px;
         }
 
@@ -381,7 +380,7 @@
   .submit_btn {
     margin-top: 40px;
 
-    @include variables.buttonStyle;
+    @include styles.buttonStyle;
 
     &:hover {
       box-shadow: 0 0 10px 3px rgb(117, 117, 117);
@@ -390,9 +389,9 @@
 }
 
 .basic_count {
-  color: variables.$dark;
+  color: styles.$dark;
   &:hover {
-    color: variables.$pinkred;
+    color: styles.$pinkred;
   }
  
 }

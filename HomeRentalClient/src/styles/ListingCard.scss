@@ -1,4 +1,4 @@
-@use "./variables" as variables;
+@use "./index" as styles;
 
 .listing-card {
   position: relative;
@@ -7,7 +7,7 @@
   border-radius: 10px;
 
   &:hover {
-    @include variables.shadow;
+    @include styles.shadow;
   }
 
   .slider-container {

@@ -1,6 +1,5 @@
-// Import variables and breakpoints using @use
-@use "./variables" as variables;
-@use "./breakpoints" as breakpoints;
+// Import all styles using @use
+@use "./index" as styles;
 
 .footer {
   display: flex;
@@ -93,7 +92,7 @@
   }
 
   // Responsive Design
-  @include breakpoints.md {
+  @include styles.breakpoint(md) {
     flex-direction: column;
     text-align: center;
     gap: 20px;
@@ -105,3 +104,4 @@
     }
   }
 }
+
