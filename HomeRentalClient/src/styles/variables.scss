@@ -1,3 +1,4 @@
+@forward "variables";
 // Define CSS variables (Global Root Variables)
 :root {
   --pinkred: #F8395A;
@@ -34,7 +35,7 @@ $dark: var(--dark);
 }
 
 // Export all variables and mixins
-@forward "variables";
+
 
 
 

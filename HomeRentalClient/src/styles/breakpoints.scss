@@ -1,3 +1,4 @@
+@forward "breakpoints";
 // Import Sass map module
 @use "sass:map";
 
@@ -62,4 +63,4 @@ $breakpoints: (
 }
 
 // Export breakpoints and mixins for other files
-@forward "breakpoints";
+
