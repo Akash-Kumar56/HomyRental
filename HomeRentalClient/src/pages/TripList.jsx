@@ -23,7 +23,7 @@ const TripList = () => {
 
     try {
       console.log("Fetching trips for user:", userId);
-      const response = await fetch(`http://localhost:3001/users/${userId}/trips`, {
+      const response = await fetch(`https://homyrentalserver2.onrender.com/users/${userId}/trips`, {
         method: 'GET',
       });
 
