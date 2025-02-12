@@ -13,7 +13,7 @@ const Listings = () => {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const listings = useSelector((state) => state.listings.listings || []);
+  const listings = useSelector((state) => state.listings?.listings || []);
   const getFeedListings = async () => {
     try {
       const response = await fetch(
@@ -25,10 +25,12 @@ const Listings = () => {
         }
       );
       const data = await response.json();
-      dispatch(setListings({ listings: data }));
+      console.log("Fetched listings", data);
+      dispatch(setListings({ listings: data || [] }));
       setLoading(false);
     } catch (err) {
       console.log("fetch listings faild", err.message);
+      setLoading(false);
     }
   };
 
@@ -55,7 +57,7 @@ const Listings = () => {
 
       {loading ? (
         <Loader />
-      ) : (
+      ) : listings.length > 0 ? (
         <div className="listings">
           {listings.map(
             ({
@@ -85,6 +87,8 @@ const Listings = () => {
             )
           )}
         </div>
+      ) : (
+        <p>No listings available</p>
       )}
     </>
   );
