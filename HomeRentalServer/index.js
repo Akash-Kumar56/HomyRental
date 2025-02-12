@@ -22,7 +22,7 @@ app.use('/users', userRoutes)
 
 // Mongoose setup
 const PORT = process.env.PORT || 3001;
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URI, {
   
   dbName: "homerent",
   useNewUrlParser: true,
