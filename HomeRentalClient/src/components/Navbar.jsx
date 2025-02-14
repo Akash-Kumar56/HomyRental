@@ -6,16 +6,12 @@ import "../styles/Navbar.scss";
 import { setLogout } from "../redux/state";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
-
   const user = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
-
-  const [search, setSearch] = useState("")
-  const navigate = useNavigate()
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const pinkred = getComputedStyle(document.documentElement)
     .getPropertyValue("--pinkred")
@@ -26,29 +22,34 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="/">
+      <Link to="/">
         <img src="/assets/homelogo8.png" alt="logo" />
-      </a>
+      </Link>
+
       <div className="navbar_search">
-        <input type="text" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
-        <IconButton  disabled={search === ""} >
-          <Search sx={{ color: pinkred }} onClick={() => {navigate(`/properties/search/${search}`)}} />
+        <input
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <IconButton disabled={search === ""} onClick={() => navigate(`/properties/search/${search}`)}>
+          <Search sx={{ color: pinkred }} />
         </IconButton>
       </div>
+
       <div className="navbar_right">
         {user ? (
-          <a href="/create-listing" className="host">
+          <Link to="/create-listing" className="host">
             Become A Host
-          </a>
+          </Link>
         ) : (
-          <a href="/login" className="host">
+          <Link to="/login" className="host">
             Become A Host
-          </a>
+          </Link>
         )}
-        <button
-          className="navbar_right_account"
-          onClick={() => setDropdownMenu(!dropdownMenu)}
-        >
+
+        <button className="navbar_right_account" onClick={() => setDropdownMenu(!dropdownMenu)}>
           <Menu sx={{ color: darkgrey }} />
           {!user ? (
             <Person sx={{ color: darkgrey }} />
@@ -63,6 +64,7 @@ const Navbar = () => {
             />
           )}
         </button>
+
         {dropdownMenu && !user && (
           <div className="navbar_right_accountmenu">
             <Link to="/login">Login</Link>
@@ -77,12 +79,7 @@ const Navbar = () => {
             <Link to={`/${user._id}/properties`}>Property List</Link>
             <Link to={`/${user._id}/reservations`}>Reservation List</Link>
             <Link to="/create-listing">Become A Host</Link>
-            <Link
-              to="/login"
-              onClick={() => {
-                dispatch(setLogout());
-              }}
-            >
+            <Link to="/login" onClick={() => dispatch(setLogout())}>
               LogOut
             </Link>
           </div>
@@ -93,3 +90,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
